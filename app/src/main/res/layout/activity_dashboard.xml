@@ -58,21 +58,21 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Due Date"
+            android:id="@+id/tv_due_date"
             android:textColor="@color/black"
             android:layout_marginTop="8dp"
             android:paddingHorizontal="18dp"/>
         <Button
-            android:id="@+id/due_date_picker_button"
-            android:layout_width="250dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            style="?android:spinnerStyle"
-            android:textColor="@color/black"
-            android:text="JAN 01 2021"
-            android:onClick="openDatePicker"/>
+            android:id="@+id/et_due_date"
+            android:hint="Select Due Date"
 
+            android:layout_marginHorizontal="18dp"
+            android:textAlignment="center"/>
 
 
         <com.google.android.material.textfield.TextInputLayout
