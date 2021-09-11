@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">sidemenu</string>
+    <string name="i_agree_to_terms_and_conditions">I agree to Terms and Conditions</string>
+    <string name="Clear_All">Clear All</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_mobile">Enter Mobile</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="address">Address</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="other">Other</string>
+</resources>

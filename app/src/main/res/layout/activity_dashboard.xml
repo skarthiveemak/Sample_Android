@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    tools:context=".Dashboard">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/main_toolbar"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/til_name"
+            android:paddingHorizontal="13dp"
+            app:endIconMode="clear_text"
+            app:helperText="Mandatory*"
+            app:helperTextTextColor="@color/teal_700"
+            app:startIconDrawable="@drawable/ic_name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_name"
+                android:hint="@string/enter_name"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:paddingHorizontal="13dp"
+            app:prefixText="+91"
+            app:counterEnabled="true"
+            app:counterMaxLength="10"
+            app:endIconMode="clear_text"
+            app:helperText="Mandatory*"
+            app:helperTextTextColor="@color/teal_700"
+            app:startIconDrawable="@drawable/ic_mobile"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_mobile"
+                android:hint="@string/enter_mobile"
+                android:maxLength="10"
+                android:imeOptions="actionNext"
+                android:inputType="number"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/til_email"
+            android:layout_marginTop="8dp"
+            android:paddingHorizontal="13dp"
+            app:endIconMode="custom"
+            app:helperText="Optional"
+            app:helperTextTextColor="@android:color/darker_gray"
+            app:startIconDrawable="@drawable/ic_email"
+            app:endIconDrawable="@drawable/ic_clear"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_email"
+                android:hint="@string/enter_email"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:paddingHorizontal="13dp"
+            app:helperText="Mandatory"
+            app:helperTextTextColor="@color/teal_700"
+            app:passwordToggleEnabled="true"
+            app:startIconDrawable="@drawable/ic_password"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_password"
+                android:hint="@string/enter_password"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:paddingHorizontal="13dp"
+            app:helperText="Optional"
+            android:hint="@string/address"
+            app:helperTextTextColor="@color/teal_700"
+            app:startIconDrawable="@drawable/ic_address"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_address"
+                android:imeOptions="actionNext"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/gender_group"
+            android:checkedButton="@id/radio_button1"
+            android:orientation="horizontal"
+            android:paddingHorizontal="13dp"
+            >
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radio_button1"
+                android:text="@string/male"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radio_button2"
+                android:layout_marginStart="10dp"
+                android:text="@string/female"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radio_button3"
+                android:layout_marginStart="10dp"
+                android:text="@string/other"/>
+
+        </RadioGroup>
+
+
+        <CheckBox
+            android:id="@+id/accept_terms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:text="@string/i_agree_to_terms_and_conditions" />
+
+                <com.google.android.material.button.MaterialButton
+            android:id="@+id/bt_clear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:padding="12dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="@string/Clear_All"
+            app:cornerRadius="100dp"
+            app:icon="@drawable/ic_clear"
+            app:iconGravity="textStart" />
+
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/white">
+
+        <include layout="@layout/main_nav_drawer" />
+
+    </RelativeLayout>
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
