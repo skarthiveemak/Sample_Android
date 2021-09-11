@@ -10,4 +10,6 @@
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="other">Other</string>
+    <string name="reference_number">Reference Number</string>
+    <string name="case_id">Case ID</string>
 </resources>
