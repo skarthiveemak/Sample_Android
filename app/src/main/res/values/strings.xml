@@ -12,4 +12,24 @@
     <string name="other">Other</string>
     <string name="reference_number">Reference Number</string>
     <string name="case_id">Case ID</string>
+    <string name="description">Description</string>
+    <string name="insure_name">Insure Name</string>
+    <string name="insurer_phone_number">Insurer Phone Number</string>
+    <string name="address_line_1">Address Line 1</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="pincode">Pincode</string>
+    <string name="landmark">Landmark</string>
+    <string name="thirdparty_details">ThirdParty Details</string>
+    <string name="insurer_details">Insurer Details</string>
+    <string-array name="spinner_agent_name">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
 </resources>

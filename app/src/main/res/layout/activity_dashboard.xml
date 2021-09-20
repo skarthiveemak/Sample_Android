@@ -7,215 +7,679 @@
     android:id="@+id/drawer_layout"
     tools:context=".Dashboard">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <include
-            layout="@layout/main_toolbar"/>
 
-<!--        Case ID-->
-        <com.google.android.material.textfield.TextInputLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/til_case_id"
-            android:paddingHorizontal="13dp"
-            app:endIconMode="clear_text"
-            app:helperText="Mandatory*"
-            app:helperTextTextColor="@color/teal_700"
-            app:startIconDrawable="@drawable/ic_name"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <EditText
+            <include
+                layout="@layout/main_toolbar"/>
+
+<!--            <com.github.florent37.expansionpanel.ExpansionHeader-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                app:expansion_headerIndicator="@id/headerIndicator"-->
+<!--                app:expansion_layout="@id/expansionLayout"-->
+<!--                app:expansion_toggleOnClick="true">-->
+
+
+<!--            </com.github.florent37.expansionpanel.ExpansionHeader>-->
+
+            <!--        Case ID-->
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/et_case_id"
-                android:hint="@string/case_id"
-                android:imeOptions="actionNext"
-                android:inputType="textPersonName"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                android:id="@+id/til_case_id"
+                android:paddingHorizontal="13dp"
+                app:endIconMode="clear_text"
+                app:helperText="Mandatory*"
+                app:helperTextTextColor="@color/teal_700"
+                app:startIconDrawable="@drawable/ic_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
-<!--        Ref number-->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/til_ref_number"
-            android:paddingHorizontal="13dp"
-            app:endIconMode="clear_text"
-            app:helperText="Mandatory*"
-            app:helperTextTextColor="@color/teal_700"
-            app:startIconDrawable="@drawable/ic_name"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_case_id"
+                    android:hint="@string/case_id"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPersonName"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
+            <!--        Ref number-->
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/et_ref_number"
-                android:hint="@string/reference_number"
-                android:imeOptions="actionNext"
-                android:inputType="textPersonName"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                android:id="@+id/til_ref_number"
+                android:paddingHorizontal="13dp"
+                app:endIconMode="clear_text"
+                app:helperText="Mandatory*"
+                app:helperTextTextColor="@color/teal_700"
+                app:startIconDrawable="@drawable/ic_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Due Date"
-            android:id="@+id/tv_due_date"
-            android:textColor="@color/black"
-            android:layout_marginTop="8dp"
-            android:paddingHorizontal="18dp"/>
-        <Button
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/et_due_date"
-            android:hint="Select Due Date"
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_ref_number"
+                    android:hint="@string/reference_number"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPersonName"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            android:layout_marginHorizontal="18dp"
-            android:textAlignment="center"/>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:paddingHorizontal="13dp"
-            app:prefixText="+91"
-            app:counterEnabled="true"
-            app:counterMaxLength="10"
-            app:endIconMode="clear_text"
-            app:helperText="Mandatory*"
-            app:helperTextTextColor="@color/teal_700"
-            app:startIconDrawable="@drawable/ic_mobile"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-
-            <EditText
+            <!--        Due Date-->
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/et_mobile"
-                android:hint="@string/enter_mobile"
-                android:maxLength="10"
-                android:imeOptions="actionNext"
-                android:inputType="number"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/til_email"
-            android:layout_marginTop="8dp"
-            android:paddingHorizontal="13dp"
-            app:endIconMode="custom"
-            app:helperText="Optional"
-            app:helperTextTextColor="@android:color/darker_gray"
-            app:startIconDrawable="@drawable/ic_email"
-            app:endIconDrawable="@drawable/ic_clear"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/et_email"
-                android:hint="@string/enter_email"
-                android:imeOptions="actionNext"
-                android:inputType="textEmailAddress" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:paddingHorizontal="13dp"
-            app:helperText="Mandatory"
-            app:helperTextTextColor="@color/teal_700"
-            app:passwordToggleEnabled="true"
-            app:startIconDrawable="@drawable/ic_password"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/et_password"
-                android:hint="@string/enter_password"
-                android:imeOptions="actionDone"
-                android:inputType="textPassword"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:paddingHorizontal="13dp"
-            app:helperText="Optional"
-            android:hint="@string/address"
-            app:helperTextTextColor="@color/teal_700"
-            app:startIconDrawable="@drawable/ic_address"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/et_address"
-                android:imeOptions="actionNext"
-                android:inputType="text"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/gender_group"
-            android:checkedButton="@id/radio_button1"
-            android:orientation="horizontal"
-            android:paddingHorizontal="13dp"
-            >
-
-            <RadioButton
+                android:text="Due Date"
+                android:id="@+id/tv_due_date"
+                android:textColor="@color/black"
+                android:layout_marginTop="8dp"
+                android:paddingHorizontal="18dp"/>
+            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/radio_button1"
-                android:text="@string/male"/>
-            <RadioButton
-                android:layout_width="wrap_content"
+                android:id="@+id/et_due_date"
+                android:hint="Select Due Date"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_marginHorizontal="18dp"
+                android:textAlignment="center"/>
+
+            <!--        Agent Name-->
+
+
+            <!--        Description-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/radio_button2"
-                android:layout_marginStart="10dp"
-                android:text="@string/female"/>
-            <RadioButton
-                android:layout_width="wrap_content"
+                android:id="@+id/til_description"
+                android:paddingHorizontal="13dp"
+                app:endIconMode="clear_text"
+                app:helperText="Mandatory*"
+                app:helperTextTextColor="@color/teal_700"
+                app:startIconDrawable="@drawable/ic_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:id="@+id/et_description"
+                    android:hint="@string/description"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPersonName"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+<!--            Insurer Details-->
+
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/radio_button3"
-                android:layout_marginStart="10dp"
-                android:text="@string/other"/>
+                android:id="@+id/tv_insurer_details_heading"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:text="@string/insurer_details"
+                android:textAlignment="center"/>
 
-        </RadioGroup>
+            <!--        Insurer Name-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/til_i_name"
+                android:paddingHorizontal="13dp"
+                app:endIconMode="clear_text"
+                app:helperText="Mandatory*"
+                app:helperTextTextColor="@color/teal_700"
+                app:startIconDrawable="@drawable/ic_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_i_name"
+                    android:hint="@string/insure_name"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPersonName"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
 
-        <CheckBox
-            android:id="@+id/accept_terms"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="13dp"
-            android:text="@string/i_agree_to_terms_and_conditions" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingHorizontal="13dp"
+                app:prefixText="+91"
+                app:counterEnabled="true"
+                app:counterMaxLength="10"
+                app:endIconMode="clear_text"
+                app:helperText="Mandatory*"
+                app:helperTextTextColor="@color/teal_700"
+                app:startIconDrawable="@drawable/ic_mobile"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
-                <com.google.android.material.button.MaterialButton
-            android:id="@+id/bt_clear"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:gravity="center"
-            android:padding="12dp"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:text="@string/Clear_All"
-            app:cornerRadius="100dp"
-            app:icon="@drawable/ic_clear"
-            app:iconGravity="textStart" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_i_mobile"
+                    android:hint="Insurer Mobile Number"
+                    android:maxLength="15"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"/>
 
-    </LinearLayout>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--        Email-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/til_i_email"
+                android:layout_marginTop="8dp"
+                android:paddingHorizontal="13dp"
+                app:endIconMode="custom"
+                app:helperText="Optional"
+                app:helperTextTextColor="@android:color/darker_gray"
+                app:startIconDrawable="@drawable/ic_email"
+                app:endIconDrawable="@drawable/ic_clear"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_i_email"
+                    android:hint="@string/enter_email"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--        Address Line 1-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/til_i_address_line_1"
+                android:paddingHorizontal="13dp"
+                app:endIconMode="clear_text"
+                app:helperText="Mandatory*"
+                app:helperTextTextColor="@color/teal_700"
+                app:startIconDrawable="@drawable/ic_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_i_address_line_1"
+                    android:hint="@string/address_line_1"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!--        Address Line 2-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/til_i_address_line_2"
+                android:paddingHorizontal="13dp"
+                app:endIconMode="clear_text"
+                app:helperText="Mandatory*"
+                app:helperTextTextColor="@color/teal_700"
+                app:startIconDrawable="@drawable/ic_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_i_address_line_2"
+                    android:hint="Address line 2"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--        City-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/til_i_city"
+                android:paddingHorizontal="13dp"
+                app:endIconMode="clear_text"
+                app:helperText="Mandatory*"
+                app:helperTextTextColor="@color/teal_700"
+                app:startIconDrawable="@drawable/ic_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_i_city"
+                    android:hint="@string/city"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!--        State-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/til_i_state"
+                android:paddingHorizontal="13dp"
+                app:endIconMode="clear_text"
+                app:helperText="Mandatory*"
+                app:helperTextTextColor="@color/teal_700"
+                app:startIconDrawable="@drawable/ic_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_i_state"
+                    android:hint="@string/state"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!--        Pincode-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/til_i_pincode"
+                android:paddingHorizontal="13dp"
+                app:endIconMode="clear_text"
+                app:helperText="Mandatory*"
+                app:helperTextTextColor="@color/teal_700"
+                app:startIconDrawable="@drawable/ic_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_i_pincode"
+                    android:hint="@string/pincode"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!--     Landmark-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/til_i_landmark"
+                android:paddingHorizontal="13dp"
+                app:endIconMode="clear_text"
+                app:helperText="Mandatory*"
+                app:helperTextTextColor="@color/teal_700"
+                app:startIconDrawable="@drawable/ic_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_i_landmark"
+                    android:hint="@string/landmark"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!--     Ins Questions-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/til_i_questions"
+                android:paddingHorizontal="13dp"
+                app:endIconMode="clear_text"
+                app:helperText="Mandatory*"
+                app:helperTextTextColor="@color/teal_700"
+                app:startIconDrawable="@drawable/ic_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:id="@+id/et_i_questions"
+                    android:hint="Insurer Questions"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <!--            Third party Details-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_tp_details_heading"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:text="@string/thirdparty_details"
+                android:textAlignment="center"/>
+
+            <!--        Tp name Name-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/til_tp_name"
+                android:paddingHorizontal="13dp"
+                app:endIconMode="clear_text"
+                app:helperText="Mandatory*"
+                app:helperTextTextColor="@color/teal_700"
+                app:startIconDrawable="@drawable/ic_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_tp_name"
+                    android:hint="@string/insure_name"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPersonName"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingHorizontal="13dp"
+                app:prefixText="+91"
+                app:counterEnabled="true"
+                app:counterMaxLength="10"
+                app:endIconMode="clear_text"
+                app:helperText="Mandatory*"
+                app:helperTextTextColor="@color/teal_700"
+                app:startIconDrawable="@drawable/ic_mobile"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_tp_mobile"
+                    android:hint="Insurer Mobile Number"
+                    android:maxLength="15"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--        Email-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/til_tp_email"
+                android:layout_marginTop="8dp"
+                android:paddingHorizontal="13dp"
+                app:endIconMode="custom"
+                app:helperText="Optional"
+                app:helperTextTextColor="@android:color/darker_gray"
+                app:startIconDrawable="@drawable/ic_email"
+                app:endIconDrawable="@drawable/ic_clear"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_tp_email"
+                    android:hint="@string/enter_email"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--        Address Line 1-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/til_tp_address_line_1"
+                android:paddingHorizontal="13dp"
+                app:endIconMode="clear_text"
+                app:helperText="Mandatory*"
+                app:helperTextTextColor="@color/teal_700"
+                app:startIconDrawable="@drawable/ic_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_tp_address_line_1"
+                    android:hint="@string/address_line_1"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!--        Address Line 2-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/til_tp_address_line_2"
+                android:paddingHorizontal="13dp"
+                app:endIconMode="clear_text"
+                app:helperText="Mandatory*"
+                app:helperTextTextColor="@color/teal_700"
+                app:startIconDrawable="@drawable/ic_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_tp_address_line_2"
+                    android:hint="Address line 2"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--        City-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/til_tp_city"
+                android:paddingHorizontal="13dp"
+                app:endIconMode="clear_text"
+                app:helperText="Mandatory*"
+                app:helperTextTextColor="@color/teal_700"
+                app:startIconDrawable="@drawable/ic_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_tp_city"
+                    android:hint="@string/city"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!--        State-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/til_tp_state"
+                android:paddingHorizontal="13dp"
+                app:endIconMode="clear_text"
+                app:helperText="Mandatory*"
+                app:helperTextTextColor="@color/teal_700"
+                app:startIconDrawable="@drawable/ic_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_tp_state"
+                    android:hint="@string/state"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!--        Pincode-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/til_tp_pincode"
+                android:paddingHorizontal="13dp"
+                app:endIconMode="clear_text"
+                app:helperText="Mandatory*"
+                app:helperTextTextColor="@color/teal_700"
+                app:startIconDrawable="@drawable/ic_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_tp_pincode"
+                    android:hint="@string/pincode"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!--     Landmark-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/til_tp_landmark"
+                android:paddingHorizontal="13dp"
+                app:endIconMode="clear_text"
+                app:helperText="Mandatory*"
+                app:helperTextTextColor="@color/teal_700"
+                app:startIconDrawable="@drawable/ic_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_tp_landmark"
+                    android:hint="@string/landmark"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!--     TP Questions-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/til_tp_questions"
+                android:paddingHorizontal="13dp"
+                app:endIconMode="clear_text"
+                app:helperText="Mandatory*"
+                app:helperTextTextColor="@color/teal_700"
+                app:startIconDrawable="@drawable/ic_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:id="@+id/et_tp_questions"
+                    android:hint="Insurer Questions"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingHorizontal="13dp"
+                app:helperText="Mandatory"
+                app:helperTextTextColor="@color/teal_700"
+                app:passwordToggleEnabled="true"
+                app:startIconDrawable="@drawable/ic_password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_password"
+                    android:hint="@string/enter_password"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingHorizontal="13dp"
+                app:helperText="Optional"
+                android:hint="@string/address"
+                app:helperTextTextColor="@color/teal_700"
+                app:startIconDrawable="@drawable/ic_address"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_address"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/gender_group"
+                android:checkedButton="@id/radio_button1"
+                android:orientation="horizontal"
+                android:paddingHorizontal="13dp"
+                >
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radio_button1"
+                    android:text="@string/male"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radio_button2"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/female"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radio_button3"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/other"/>
+
+            </RadioGroup>
+
+
+            <CheckBox
+                android:id="@+id/accept_terms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:text="@string/i_agree_to_terms_and_conditions" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bt_clear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:padding="12dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/Clear_All"
+                app:cornerRadius="100dp"
+                app:icon="@drawable/ic_clear"
+                app:iconGravity="textStart" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
 
 
