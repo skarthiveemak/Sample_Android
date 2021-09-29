@@ -4,9 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Projects/sidemenu/app/src/main/res/layout/activity_about.xml" value="0.20416666666666666" />
-        <entry key="..\:/Projects/sidemenu/app/src/main/res/layout/activity_dashboard.xml" value="0.21" />
+        <entry key="..\:/Projects/sidemenu/app/src/main/res/layout/activity_dashboard.xml" value="0.1824074074074074" />
         <entry key="..\:/Projects/sidemenu/app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="..\:/Projects/sidemenu/app/src/main/res/layout/activity_splashscreen.xml" value="0.18645833333333334" />
+        <entry key="..\:/Projects/sidemenu/app/src/main/res/layout/content_view.xml" value="0.18645833333333334" />
+        <entry key="..\:/Projects/sidemenu/app/src/main/res/layout/header_view.xml" value="0.18645833333333334" />
         <entry key="..\:/Projects/sidemenu/app/src/main/res/layout/item_drawer_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Projects/sidemenu/app/src/main/res/layout/main_nav_drawer.xml" value="0.25" />
         <entry key="..\:/Projects/sidemenu/app/src/main/res/layout/main_toolbar.xml" value="0.12771739130434784" />

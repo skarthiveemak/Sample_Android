@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add("About");
         arrayList.add("Logout");
 
+
         // initialize adapter
         adapter = new MainAdapter(this,arrayList);
         // set layout manager

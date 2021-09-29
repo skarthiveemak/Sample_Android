@@ -20,15 +20,15 @@
             <include
                 layout="@layout/main_toolbar"/>
 
-<!--            <com.github.florent37.expansionpanel.ExpansionHeader-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="match_parent"-->
-<!--                app:expansion_headerIndicator="@id/headerIndicator"-->
-<!--                app:expansion_layout="@id/expansionLayout"-->
-<!--                app:expansion_toggleOnClick="true">-->
+            <!--            <com.github.florent37.expansionpanel.ExpansionHeader-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                app:expansion_headerIndicator="@id/headerIndicator"-->
+            <!--                app:expansion_layout="@id/expansionLayout"-->
+            <!--                app:expansion_toggleOnClick="true">-->
 
 
-<!--            </com.github.florent37.expansionpanel.ExpansionHeader>-->
+            <!--            </com.github.florent37.expansionpanel.ExpansionHeader>-->
 
             <!--        Case ID-->
             <com.google.android.material.textfield.TextInputLayout
@@ -40,6 +40,7 @@
                 app:helperText="Mandatory*"
                 app:helperTextTextColor="@color/teal_700"
                 app:startIconDrawable="@drawable/ic_name"
+                android:labelFor="@+id/et_case_id"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
                 <EditText
@@ -62,6 +63,7 @@
                 app:helperText="Mandatory*"
                 app:helperTextTextColor="@color/teal_700"
                 app:startIconDrawable="@drawable/ic_name"
+                android:labelFor="@+id/et_ref_number"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
                 <EditText
@@ -104,6 +106,7 @@
                 app:helperText="Mandatory*"
                 app:helperTextTextColor="@color/teal_700"
                 app:startIconDrawable="@drawable/ic_name"
+                android:labelFor="@+id/et_description"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
                 <EditText
@@ -120,7 +123,7 @@
                     android:lines="8"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-<!--            Insurer Details-->
+            <!--            Insurer Details-->
 
             <TextView
                 android:layout_width="match_parent"
@@ -141,6 +144,7 @@
                 app:helperText="Mandatory*"
                 app:helperTextTextColor="@color/teal_700"
                 app:startIconDrawable="@drawable/ic_name"
+                android:labelFor="@+id/et_i_name"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
                 <EditText
@@ -165,6 +169,7 @@
                 app:helperText="Mandatory*"
                 app:helperTextTextColor="@color/teal_700"
                 app:startIconDrawable="@drawable/ic_mobile"
+                android:labelFor="@+id/et_i_mobile"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
                 <EditText
@@ -190,15 +195,16 @@
                 app:helperTextTextColor="@android:color/darker_gray"
                 app:startIconDrawable="@drawable/ic_email"
                 app:endIconDrawable="@drawable/ic_clear"
+                android:labelFor="@+id/et_i_email"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
                 <EditText
+                    android:id="@+id/et_i_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/et_i_email"
                     android:hint="@string/enter_email"
                     android:imeOptions="actionNext"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="textEmailAddress"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -212,6 +218,7 @@
                 app:helperText="Mandatory*"
                 app:helperTextTextColor="@color/teal_700"
                 app:startIconDrawable="@drawable/ic_name"
+                android:labelFor="@+id/et_i_address_line_1"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
                 <EditText
@@ -524,6 +531,7 @@
                 app:helperText="Mandatory*"
                 app:helperTextTextColor="@color/teal_700"
                 app:startIconDrawable="@drawable/ic_name"
+                android:labelFor="@+id/et_tp_state"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
                 <EditText
@@ -532,7 +540,8 @@
                     android:id="@+id/et_tp_state"
                     android:hint="@string/state"
                     android:imeOptions="actionNext"
-                    android:inputType="text"/>
+                    android:inputType="text"
+                    />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -698,13 +707,49 @@
                 app:icon="@drawable/ic_clear"
                 app:iconGravity="textStart" />
 
+
+            <com.robertlevonyan.views.expandable.Expandable
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/expandable">
+
+                <include
+                    android:id="@+id/header"
+                    layout="@layout/header_view" />
+
+
+
+
+                <include
+                    android:id="@+id/content"
+                    layout="@layout/content_view" />
+            </com.robertlevonyan.views.expandable.Expandable>
+
+            <com.robertlevonyan.views.expandable.Expandable
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/expandable2">
+
+                <include
+                    android:id="@+id/header"
+                    layout="@layout/header_view" />
+
+
+
+
+                <include
+                    android:id="@+id/content"
+                    layout="@layout/content_view" />
+            </com.robertlevonyan.views.expandable.Expandable>
         </LinearLayout>
+
+
 
     </ScrollView>
 
 
 
-
+    <!-- ______________________Side Drawer Menu______________________ -->
     <RelativeLayout
         android:layout_width="300dp"
         android:layout_height="match_parent"
