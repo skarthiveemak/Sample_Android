@@ -37,16 +37,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/et_caseid"
-                    android:textAlignment="textEnd"/>
+                    android:textAlignment="textEnd"
+                    android:backgroundTint="@color/white"/>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <Button
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_alignParentRight="true"/>
+                    <ImageButton
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_pencil"
+                        android:backgroundTint="#B3E5FC"/>
                 </RelativeLayout>
 
             </LinearLayout>
@@ -69,25 +72,39 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/et_name"/>
+                    android:id="@+id/et_name"
+                    android:backgroundTint="@color/white"/>
+
+
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <Button
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_alignParentRight="true"/>
+                    <ImageButton
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_eye"
+                        android:backgroundTint="#A5D6A7"/>
                 </RelativeLayout>
 
 
+
+
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#938B8B"
+                android:layout_marginHorizontal="2dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
 
                 <TextView
                     android:layout_width="65dp"
@@ -97,7 +114,8 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/et_due_date"/>
+                    android:id="@+id/et_due_date"
+                    android:backgroundTint="@color/white"/>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -107,8 +125,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
+                        android:backgroundTint="@color/white"
                         />
+
+
                 </RelativeLayout>
+
+
 
 
             </LinearLayout>
