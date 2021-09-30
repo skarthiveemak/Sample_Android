@@ -20,419 +20,518 @@
             <include
                 layout="@layout/main_toolbar"/>
 
-            <!--            <com.github.florent37.expansionpanel.ExpansionHeader-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="match_parent"-->
-            <!--                app:expansion_headerIndicator="@id/headerIndicator"-->
-            <!--                app:expansion_layout="@id/expansionLayout"-->
-            <!--                app:expansion_toggleOnClick="true">-->
-
-
-            <!--            </com.github.florent37.expansionpanel.ExpansionHeader>-->
-
-            <!--        Case ID-->
-            <com.google.android.material.textfield.TextInputLayout
+<!--            _________________Case details______________ -->
+         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/til_case_id"
-                android:paddingHorizontal="13dp"
-                app:endIconMode="clear_text"
-                app:helperText="Mandatory*"
-                app:helperTextTextColor="@color/teal_700"
-                app:startIconDrawable="@drawable/ic_name"
-                android:labelFor="@+id/et_case_id"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-
-                <EditText
-                    android:layout_width="match_parent"
+                android:orientation="vertical">
+<!--Exapnsion header -->
+                <com.github.florent37.expansionpanel.ExpansionHeader
                     android:layout_height="wrap_content"
-                    android:id="@+id/et_case_id"
-                    android:hint="@string/case_id"
-                    android:imeOptions="actionNext"
-                    android:inputType="textPersonName"
-                    tools:ignore="Autofill" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <!--        Ref number-->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/til_ref_number"
-                android:paddingHorizontal="13dp"
-                app:endIconMode="clear_text"
-                app:helperText="Mandatory*"
-                app:helperTextTextColor="@color/teal_700"
-                app:startIconDrawable="@drawable/ic_name"
-                android:labelFor="@+id/et_ref_number"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-
-                <EditText
                     android:layout_width="match_parent"
+                    app:expansion_headerIndicator="@+id/headerIndicator"
+                    app:expansion_layout="@+id/expansionLayout"
+                    app:expansion_toggleOnClick="true">
+
+                    <ImageView
+                        android:adjustViewBounds="true"
+                        android:id="@+id/headerIndicator"
+                        android:layout_gravity="center_vertical|right"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="wrap_content"
+                        app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Case Details"
+                        android:textSize="20sp"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"/>
+
+                </com.github.florent37.expansionpanel.ExpansionHeader>
+
+<!--             Content Layout for Expension-->
+                <com.github.florent37.expansionpanel.ExpansionLayout
+                    android:id="@+id/expansionLayout"
                     android:layout_height="wrap_content"
-                    android:id="@+id/et_ref_number"
-                    android:hint="@string/reference_number"
-                    android:imeOptions="actionNext"
-                    android:inputType="textPersonName"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_width="match_parent">
+     <!--  we have to put our child view inside a Linear layout to get view in perfectly-->
 
-            <!--        Due Date-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Due Date"
-                android:id="@+id/tv_due_date"
-                android:textColor="@color/black"
-                android:layout_marginTop="8dp"
-                android:paddingHorizontal="18dp"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/et_due_date"
-                android:hint="Select Due Date"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:layout_marginHorizontal="18dp"
-                android:textAlignment="center"/>
-
-            <!--        Agent Name-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
 
-            <!--        Description-->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/til_description"
-                android:paddingHorizontal="13dp"
-                app:endIconMode="clear_text"
-                app:helperText="Mandatory*"
-                app:helperTextTextColor="@color/teal_700"
-                app:startIconDrawable="@drawable/ic_name"
-                android:labelFor="@+id/et_description"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                        <!--        Case ID-->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/til_case_id"
+                            android:paddingHorizontal="13dp"
+                            app:endIconMode="clear_text"
+                            app:helperText="Mandatory*"
+                            app:helperTextTextColor="@color/teal_700"
+                            app:startIconDrawable="@drawable/ic_name"
+                            android:labelFor="@+id/et_case_id"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:id="@+id/et_description"
-                    android:hint="@string/description"
-                    android:imeOptions="actionNext"
-                    android:inputType="textMultiLine"
-                    android:minLines="1"
-                    android:gravity="left|top"
-                    android:maxLines="10"
-                    android:scrollbars="vertical"
-                    android:lines="8"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/et_case_id"
+                                android:hint="@string/case_id"
+                                android:imeOptions="actionNext"
+                                android:inputType="textPersonName"
+                                tools:ignore="Autofill" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!--        Ref number-->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/til_ref_number"
+                            android:paddingHorizontal="13dp"
+                            app:endIconMode="clear_text"
+                            app:helperText="Mandatory*"
+                            app:helperTextTextColor="@color/teal_700"
+                            app:startIconDrawable="@drawable/ic_name"
+                            android:labelFor="@+id/et_ref_number"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/et_ref_number"
+                                android:hint="@string/reference_number"
+                                android:imeOptions="actionNext"
+                                android:inputType="textPersonName"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!--        Due Date-->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Due Date"
+                            android:id="@+id/tv_due_date"
+                            android:textColor="@color/black"
+                            android:layout_marginTop="8dp"
+                            android:paddingHorizontal="18dp"/>
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/et_due_date"
+                            android:hint="Select Due Date"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:layout_marginHorizontal="18dp"
+                            android:textAlignment="center"/>
+
+                        <!--        Agent Name-->
+
+
+                        <!--        Description-->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/til_description"
+                            android:paddingHorizontal="13dp"
+                            app:endIconMode="clear_text"
+                            app:helperText="Mandatory*"
+                            app:helperTextTextColor="@color/teal_700"
+                            app:startIconDrawable="@drawable/ic_name"
+                            android:labelFor="@+id/et_description"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="100dp"
+                                android:id="@+id/et_description"
+                                android:hint="@string/description"
+                                android:imeOptions="actionNext"
+                                android:inputType="textMultiLine"
+                                android:minLines="1"
+                                android:gravity="left|top"
+                                android:maxLines="10"
+                                android:scrollbars="vertical"
+                                android:lines="8"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </LinearLayout>
+
+                </com.github.florent37.expansionpanel.ExpansionLayout>
+
+            </LinearLayout>
 
             <!--            Insurer Details-->
-
-            <TextView
-                android:layout_width="match_parent"
+            <com.github.florent37.expansionpanel.ExpansionHeader
                 android:layout_height="wrap_content"
-                android:id="@+id/tv_insurer_details_heading"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                android:text="@string/insurer_details"
-                android:textAlignment="center"/>
-
-            <!--        Insurer Name-->
-            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/til_i_name"
-                android:paddingHorizontal="13dp"
-                app:endIconMode="clear_text"
-                app:helperText="Mandatory*"
-                app:helperTextTextColor="@color/teal_700"
-                app:startIconDrawable="@drawable/ic_name"
-                android:labelFor="@+id/et_i_name"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                app:expansion_headerIndicator="@+id/headerIndicator2"
+                app:expansion_layout="@+id/expansionLayout2"
+                app:expansion_toggleOnClick="true">
 
-                <EditText
+                <ImageView
+                    android:adjustViewBounds="true"
+                    android:id="@+id/headerIndicator2"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_width="wrap_content"
+                    app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/insurer_details"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"/>
+
+
+            </com.github.florent37.expansionpanel.ExpansionHeader>
+
+            <com.github.florent37.expansionpanel.ExpansionLayout
+                android:id="@+id/expansionLayout2"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/et_i_name"
-                    android:hint="@string/insure_name"
-                    android:imeOptions="actionNext"
-                    android:inputType="textPersonName"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:orientation="vertical">
+
+                    <!--        Insurer Name-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/til_i_name"
+                        android:paddingHorizontal="13dp"
+                        app:endIconMode="clear_text"
+                        app:helperText="Mandatory*"
+                        app:helperTextTextColor="@color/teal_700"
+                        app:startIconDrawable="@drawable/ic_name"
+                        android:labelFor="@+id/et_i_name"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/et_i_name"
+                            android:hint="@string/insure_name"
+                            android:imeOptions="actionNext"
+                            android:inputType="textPersonName"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+<!--                    Mobile Number-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingHorizontal="13dp"
+                        app:prefixText="+91"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="10"
+                        app:endIconMode="clear_text"
+                        app:helperText="Mandatory*"
+                        app:helperTextTextColor="@color/teal_700"
+                        app:startIconDrawable="@drawable/ic_mobile"
+                        android:labelFor="@+id/et_i_mobile"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/et_i_mobile"
+                            android:hint="Insurer Mobile Number"
+                            android:maxLength="15"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!--        Email-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/til_i_email"
+                        android:layout_marginTop="8dp"
+                        android:paddingHorizontal="13dp"
+                        app:endIconMode="custom"
+                        app:helperText="Optional"
+                        app:helperTextTextColor="@android:color/darker_gray"
+                        app:startIconDrawable="@drawable/ic_email"
+                        app:endIconDrawable="@drawable/ic_clear"
+                        android:labelFor="@+id/et_i_email"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                        <EditText
+                            android:id="@+id/et_i_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/enter_email"
+                            android:imeOptions="actionNext"
+                            android:inputType="textEmailAddress"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!--        Address Line 1-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/til_i_address_line_1"
+                        android:paddingHorizontal="13dp"
+                        app:endIconMode="clear_text"
+                        app:helperText="Mandatory*"
+                        app:helperTextTextColor="@color/teal_700"
+                        app:startIconDrawable="@drawable/ic_name"
+                        android:labelFor="@+id/et_i_address_line_1"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/et_i_address_line_1"
+                            android:hint="@string/address_line_1"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"/>
+                    </com.google.android.material.textfield.TextInputLayout>
 
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:paddingHorizontal="13dp"
-                app:prefixText="+91"
-                app:counterEnabled="true"
-                app:counterMaxLength="10"
-                app:endIconMode="clear_text"
-                app:helperText="Mandatory*"
-                app:helperTextTextColor="@color/teal_700"
-                app:startIconDrawable="@drawable/ic_mobile"
-                android:labelFor="@+id/et_i_mobile"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                     <!--        Address Line 2-->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/til_i_address_line_2"
+                            android:paddingHorizontal="13dp"
+                            app:endIconMode="clear_text"
+                            app:helperText="Mandatory*"
+                            app:helperTextTextColor="@color/teal_700"
+                            app:startIconDrawable="@drawable/ic_name"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/et_i_mobile"
-                    android:hint="Insurer Mobile Number"
-                    android:maxLength="15"
-                    android:imeOptions="actionNext"
-                    android:inputType="number"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/et_i_address_line_2"
+                                android:hint="Address line 2"
+                                android:imeOptions="actionNext"
+                                android:inputType="text"/>
+                        </com.google.android.material.textfield.TextInputLayout>
 
-            </com.google.android.material.textfield.TextInputLayout>
+                        <!--        City-->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/til_i_city"
+                            android:paddingHorizontal="13dp"
+                            app:endIconMode="clear_text"
+                            app:helperText="Mandatory*"
+                            app:helperTextTextColor="@color/teal_700"
+                            app:startIconDrawable="@drawable/ic_name"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
-            <!--        Email-->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/til_i_email"
-                android:layout_marginTop="8dp"
-                android:paddingHorizontal="13dp"
-                app:endIconMode="custom"
-                app:helperText="Optional"
-                app:helperTextTextColor="@android:color/darker_gray"
-                app:startIconDrawable="@drawable/ic_email"
-                app:endIconDrawable="@drawable/ic_clear"
-                android:labelFor="@+id/et_i_email"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-
-                <EditText
-                    android:id="@+id/et_i_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/enter_email"
-                    android:imeOptions="actionNext"
-                    android:inputType="textEmailAddress"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <!--        Address Line 1-->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/til_i_address_line_1"
-                android:paddingHorizontal="13dp"
-                app:endIconMode="clear_text"
-                app:helperText="Mandatory*"
-                app:helperTextTextColor="@color/teal_700"
-                app:startIconDrawable="@drawable/ic_name"
-                android:labelFor="@+id/et_i_address_line_1"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/et_i_address_line_1"
-                    android:hint="@string/address_line_1"
-                    android:imeOptions="actionNext"
-                    android:inputType="text"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/et_i_city"
+                                android:hint="@string/city"
+                                android:imeOptions="actionNext"
+                                android:inputType="text"/>
+                        </com.google.android.material.textfield.TextInputLayout>
 
 
-            <!--        Address Line 2-->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/til_i_address_line_2"
-                android:paddingHorizontal="13dp"
-                app:endIconMode="clear_text"
-                app:helperText="Mandatory*"
-                app:helperTextTextColor="@color/teal_700"
-                app:startIconDrawable="@drawable/ic_name"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                        <!--        State-->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/til_i_state"
+                            android:paddingHorizontal="13dp"
+                            app:endIconMode="clear_text"
+                            app:helperText="Mandatory*"
+                            app:helperTextTextColor="@color/teal_700"
+                            app:startIconDrawable="@drawable/ic_name"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/et_i_address_line_2"
-                    android:hint="Address line 2"
-                    android:imeOptions="actionNext"
-                    android:inputType="text"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <!--        City-->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/til_i_city"
-                android:paddingHorizontal="13dp"
-                app:endIconMode="clear_text"
-                app:helperText="Mandatory*"
-                app:helperTextTextColor="@color/teal_700"
-                app:startIconDrawable="@drawable/ic_name"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/et_i_city"
-                    android:hint="@string/city"
-                    android:imeOptions="actionNext"
-                    android:inputType="text"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/et_i_state"
+                                android:hint="@string/state"
+                                android:imeOptions="actionNext"
+                                android:inputType="text"/>
+                        </com.google.android.material.textfield.TextInputLayout>
 
 
-            <!--        State-->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/til_i_state"
-                android:paddingHorizontal="13dp"
-                app:endIconMode="clear_text"
-                app:helperText="Mandatory*"
-                app:helperTextTextColor="@color/teal_700"
-                app:startIconDrawable="@drawable/ic_name"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                        <!--        Pincode-->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/til_i_pincode"
+                            android:paddingHorizontal="13dp"
+                            app:endIconMode="clear_text"
+                            app:helperText="Mandatory*"
+                            app:helperTextTextColor="@color/teal_700"
+                            app:startIconDrawable="@drawable/ic_name"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/et_i_state"
-                    android:hint="@string/state"
-                    android:imeOptions="actionNext"
-                    android:inputType="text"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <!--        Pincode-->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/til_i_pincode"
-                android:paddingHorizontal="13dp"
-                app:endIconMode="clear_text"
-                app:helperText="Mandatory*"
-                app:helperTextTextColor="@color/teal_700"
-                app:startIconDrawable="@drawable/ic_name"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/et_i_pincode"
-                    android:hint="@string/pincode"
-                    android:imeOptions="actionNext"
-                    android:inputType="number"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/et_i_pincode"
+                                android:hint="@string/pincode"
+                                android:imeOptions="actionNext"
+                                android:inputType="number"/>
+                        </com.google.android.material.textfield.TextInputLayout>
 
 
-            <!--     Landmark-->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/til_i_landmark"
-                android:paddingHorizontal="13dp"
-                app:endIconMode="clear_text"
-                app:helperText="Mandatory*"
-                app:helperTextTextColor="@color/teal_700"
-                app:startIconDrawable="@drawable/ic_name"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                        <!--     Landmark-->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/til_i_landmark"
+                            android:paddingHorizontal="13dp"
+                            app:endIconMode="clear_text"
+                            app:helperText="Mandatory*"
+                            app:helperTextTextColor="@color/teal_700"
+                            app:startIconDrawable="@drawable/ic_name"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/et_i_landmark"
-                    android:hint="@string/landmark"
-                    android:imeOptions="actionNext"
-                    android:inputType="text"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <!--     Ins Questions-->
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/til_i_questions"
-                android:paddingHorizontal="13dp"
-                app:endIconMode="clear_text"
-                app:helperText="Mandatory*"
-                app:helperTextTextColor="@color/teal_700"
-                app:startIconDrawable="@drawable/ic_name"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:id="@+id/et_i_questions"
-                    android:hint="Insurer Questions"
-                    android:imeOptions="actionNext"
-                    android:inputType="textMultiLine"
-                    android:minLines="1"
-                    android:gravity="left|top"
-                    android:maxLines="10"
-                    android:scrollbars="vertical"
-                    android:lines="8"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/et_i_landmark"
+                                android:hint="@string/landmark"
+                                android:imeOptions="actionNext"
+                                android:inputType="text"/>
+                        </com.google.android.material.textfield.TextInputLayout>
 
 
+                        <!--     Ins Questions-->
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/til_i_questions"
+                            android:paddingHorizontal="13dp"
+                            app:endIconMode="clear_text"
+                            app:helperText="Mandatory*"
+                            app:helperTextTextColor="@color/teal_700"
+                            app:startIconDrawable="@drawable/ic_name"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="100dp"
+                                android:id="@+id/et_i_questions"
+                                android:hint="Insurer Questions"
+                                android:imeOptions="actionNext"
+                                android:inputType="textMultiLine"
+                                android:minLines="1"
+                                android:gravity="left|top"
+                                android:maxLines="10"
+                                android:scrollbars="vertical"
+                                android:lines="8"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+
+            </com.github.florent37.expansionpanel.ExpansionLayout>
 
             <!--            Third party Details-->
-
-            <TextView
-                android:layout_width="match_parent"
+            <com.github.florent37.expansionpanel.ExpansionHeader
                 android:layout_height="wrap_content"
-                android:id="@+id/tv_tp_details_heading"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                android:text="@string/thirdparty_details"
-                android:textAlignment="center"/>
-
-            <!--        Tp name Name-->
-            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/til_tp_name"
-                android:paddingHorizontal="13dp"
-                app:endIconMode="clear_text"
-                app:helperText="Mandatory*"
-                app:helperTextTextColor="@color/teal_700"
-                app:startIconDrawable="@drawable/ic_name"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                app:expansion_headerIndicator="@+id/headerIndicator3"
+                app:expansion_layout="@+id/expansionLayout3"
+                app:expansion_toggleOnClick="true">
 
-                <EditText
+                <ImageView
+                    android:adjustViewBounds="true"
+                    android:id="@+id/headerIndicator3"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_width="wrap_content"
+                    app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/thirdparty_details"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"/>
+
+
+            </com.github.florent37.expansionpanel.ExpansionHeader>
+
+            <com.github.florent37.expansionpanel.ExpansionLayout
+                android:id="@+id/expansionLayout3"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/et_tp_name"
-                    android:hint="@string/insure_name"
-                    android:imeOptions="actionNext"
-                    android:inputType="textMultiLine"
-                    android:minLines="1"
-                    android:gravity="left|top"
-                    android:maxLines="10"
-                    android:scrollbars="vertical"
-                    android:lines="8"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:orientation="vertical">
+
+                    <!--        Tp name Name-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/til_tp_name"
+                        android:paddingHorizontal="13dp"
+                        app:endIconMode="clear_text"
+                        app:helperText="Mandatory*"
+                        app:helperTextTextColor="@color/teal_700"
+                        app:startIconDrawable="@drawable/ic_name"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/et_tp_name"
+                            android:hint="@string/insure_name"
+                            android:imeOptions="actionNext"
+                            android:inputType="textMultiLine"
+                            android:minLines="1"
+                            android:gravity="left|top"
+                            android:maxLines="10"
+                            android:scrollbars="vertical"
+                            android:lines="8"/>
+                    </com.google.android.material.textfield.TextInputLayout>
 
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:paddingHorizontal="13dp"
-                app:prefixText="+91"
-                app:counterEnabled="true"
-                app:counterMaxLength="10"
-                app:endIconMode="clear_text"
-                app:helperText="Mandatory*"
-                app:helperTextTextColor="@color/teal_700"
-                app:startIconDrawable="@drawable/ic_mobile"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingHorizontal="13dp"
+                        app:prefixText="+91"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="10"
+                        app:endIconMode="clear_text"
+                        app:helperText="Mandatory*"
+                        app:helperTextTextColor="@color/teal_700"
+                        app:startIconDrawable="@drawable/ic_mobile"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/et_tp_mobile"
-                    android:hint="Insurer Mobile Number"
-                    android:maxLength="15"
-                    android:imeOptions="actionNext"
-                    android:inputType="number"/>
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/et_tp_mobile"
+                            android:hint="Insurer Mobile Number"
+                            android:maxLength="15"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"/>
 
-            </com.google.android.material.textfield.TextInputLayout>
+                    </com.google.android.material.textfield.TextInputLayout>
 
-            <!--        Email-->
+                     <!--        Email-->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -616,138 +715,16 @@
                     android:lines="8"/>
             </com.google.android.material.textfield.TextInputLayout>
 
+                </LinearLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:paddingHorizontal="13dp"
-                app:helperText="Mandatory"
-                app:helperTextTextColor="@color/teal_700"
-                app:passwordToggleEnabled="true"
-                app:startIconDrawable="@drawable/ic_password"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/et_password"
-                    android:hint="@string/enter_password"
-                    android:imeOptions="actionDone"
-                    android:inputType="textPassword"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:paddingHorizontal="13dp"
-                app:helperText="Optional"
-                android:hint="@string/address"
-                app:helperTextTextColor="@color/teal_700"
-                app:startIconDrawable="@drawable/ic_address"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/et_address"
-                    android:imeOptions="actionNext"
-                    android:inputType="text"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/gender_group"
-                android:checkedButton="@id/radio_button1"
-                android:orientation="horizontal"
-                android:paddingHorizontal="13dp"
-                >
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/radio_button1"
-                    android:text="@string/male"/>
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/radio_button2"
-                    android:layout_marginStart="10dp"
-                    android:text="@string/female"/>
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/radio_button3"
-                    android:layout_marginStart="10dp"
-                    android:text="@string/other"/>
-
-            </RadioGroup>
+            </com.github.florent37.expansionpanel.ExpansionLayout>
 
 
-            <CheckBox
-                android:id="@+id/accept_terms"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="13dp"
-                android:text="@string/i_agree_to_terms_and_conditions" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/bt_clear"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:gravity="center"
-                android:padding="12dp"
-                android:paddingStart="12dp"
-                android:paddingEnd="12dp"
-                android:text="@string/Clear_All"
-                app:cornerRadius="100dp"
-                app:icon="@drawable/ic_clear"
-                app:iconGravity="textStart" />
+            <include layout="@layout/activity_card_view_card_design"/>
 
 
-            <com.robertlevonyan.views.expandable.Expandable
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/expandable">
-
-                <include
-                    android:id="@+id/header"
-                    layout="@layout/header_view" />
-
-
-
-
-                <include
-                    android:id="@+id/content"
-                    layout="@layout/content_view" />
-            </com.robertlevonyan.views.expandable.Expandable>
-
-            <com.robertlevonyan.views.expandable.Expandable
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/expandable2">
-
-                <include
-                    android:id="@+id/header"
-                    layout="@layout/header_view" />
-
-
-
-
-                <include
-                    android:id="@+id/content"
-                    layout="@layout/content_view" />
-            </com.robertlevonyan.views.expandable.Expandable>
         </LinearLayout>
-
-
-
     </ScrollView>
-
-
 
     <!-- ______________________Side Drawer Menu______________________ -->
     <RelativeLayout
@@ -759,7 +736,5 @@
         <include layout="@layout/main_nav_drawer" />
 
     </RelativeLayout>
-
-
 
 </androidx.drawerlayout.widget.DrawerLayout>

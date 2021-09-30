@@ -34,6 +34,7 @@ public class splashscreen extends AppCompatActivity {
         bottomanimation = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
         middleanimation = AnimationUtils.loadAnimation(this, R.anim.middle_animation);
 
+
         //Hooks
         first = findViewById(R.id.first_line);
         second = findViewById(R.id.second_line);

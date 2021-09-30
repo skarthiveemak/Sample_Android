@@ -22,6 +22,7 @@
     <string name="landmark">Landmark</string>
     <string name="thirdparty_details">ThirdParty Details</string>
     <string name="insurer_details">Insurer Details</string>
+    <string name="my_computer">My Computer</string>
     <string-array name="spinner_agent_name">
         <item>Mercury</item>
         <item>Venus</item>
