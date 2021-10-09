@@ -67,6 +67,12 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                         break;
                     case 3:
                         // when position equal to 3
+                        // Redirect to Card design Activity
+                        activity.startActivity(new Intent(activity, CardDesignActivity.class)
+                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                        break;
+                    case 4:
+                        // when position equal to 4
                         //Initialize alert dialog
                         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
                         // set Title

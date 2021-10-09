@@ -6,9 +6,14 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -19,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     static ArrayList<String> arrayList = new ArrayList<>();
     MainAdapter adapter;
+    EditText caseid;
+    ImageButton editbtn;
+
 
     public static void closeDrawer(DrawerLayout drawerLayout) {
         // check condition
@@ -39,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
         btMenu = findViewById(R.id.bt_menu);
         recyclerView = findViewById(R.id.recycler_view);
+        caseid = findViewById(R.id.et_caseid);
+        editbtn = findViewById(R.id.btn_edit);
 
         // Clear array list
         arrayList.clear();
@@ -47,7 +57,9 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add("Home");
         arrayList.add("Case View"); // dashboard renames as case view
         arrayList.add("About");
+        arrayList.add("Card Design Test");
         arrayList.add("Logout");
+
 
 
         // initialize adapter
@@ -57,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
         //set adapter
         recyclerView.setAdapter(adapter);
 
+
+
         btMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,6 +78,23 @@ public class MainActivity extends AppCompatActivity {
                 drawerLayout.openDrawer(GravityCompat.START);
             }
         });
+
+        editbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, expansionLayout.class);
+                startActivity(intent);
+            }
+        });
+
+        caseid.setText("12EA153");
+        EditText name = findViewById(R.id.et_name);
+                name.setText("Karthik");
+        EditText duedate = findViewById(R.id.et_due_date);
+        duedate.setText("12-12-2012");
+        EditText status = findViewById(R.id.et_status);
+        status.setText("Assigned");
+
     }
 
     @Override

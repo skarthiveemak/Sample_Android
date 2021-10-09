@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".cardViewCardDesign">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="10dp"
+        app:cardElevation="5dp"
         app:cardCornerRadius="20dp"
-        android:layout_margin="10dp"
+        android:layout_margin="1dp"
         app:cardBackgroundColor="@color/white"
-        app:cardMaxElevation="12dp"
+        app:cardMaxElevation="1dp"
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true">
 
@@ -33,11 +34,12 @@
                     android:layout_height="wrap_content"
                     android:text="Case ID:"
                     android:labelFor="@+id/et_caseid"/>
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/et_caseid"
+                    android:id="@+id/tv_caseid"
                     android:textAlignment="textEnd"
+                    android:inputType="textPersonName"
                     android:backgroundTint="@color/white"/>
 
                 <RelativeLayout
@@ -49,7 +51,8 @@
                         android:layout_height="40dp"
                         android:layout_alignParentRight="true"
                         android:src="@drawable/ic_pencil"
-                        android:backgroundTint="#B3E5FC"/>
+                        android:backgroundTint="#B3E5FC"
+                        android:id="@+id/btn_edit"/>
                 </RelativeLayout>
 
             </LinearLayout>
@@ -69,10 +72,10 @@
                     android:labelFor="@+id/et_name"
                     android:textAlignment="textStart"
                     />
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/et_name"
+                    android:id="@+id/tv_name"
                     android:backgroundTint="@color/white"/>
 
 
@@ -111,28 +114,24 @@
                     android:layout_height="wrap_content"
                     android:text="Due Date:"
                     android:labelFor="@id/et_due_date"/>
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/et_due_date"
+                    android:id="@+id/tv_due_date"
                     android:backgroundTint="@color/white"/>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <EditText
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:backgroundTint="@color/white"
-                        />
-
+                        android:id="@+id/tv_status"
+                        android:backgroundTint="@color/white" />
 
                 </RelativeLayout>
-
-
-
 
             </LinearLayout>
 

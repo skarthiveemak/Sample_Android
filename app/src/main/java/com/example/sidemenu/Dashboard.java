@@ -110,6 +110,7 @@ public class Dashboard extends AppCompatActivity {
 
     }
 
+
     @Override
     protected void onPause() {
         super.onPause();

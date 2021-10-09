@@ -20,7 +20,7 @@
             <include
                 layout="@layout/main_toolbar"/>
 
-<!--            _________________Case details______________ -->
+<!--            _________________Case details______________            -->
          <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -31,7 +31,8 @@
                     android:layout_width="match_parent"
                     app:expansion_headerIndicator="@+id/headerIndicator"
                     app:expansion_layout="@+id/expansionLayout"
-                    app:expansion_toggleOnClick="true">
+                    app:expansion_toggleOnClick="true"
+                    android:padding="10dp">
 
                     <ImageView
                         android:adjustViewBounds="true"
@@ -40,13 +41,14 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
                         android:layout_width="wrap_content"
-                        app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp" />
+                        app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp"
+                        />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Case Details"
-                        android:textSize="20sp"
+                        android:textSize="25sp"
                         android:gravity="center"
                         android:layout_gravity="center_horizontal"/>
 
@@ -165,6 +167,8 @@
 
             </LinearLayout>
 
+
+
             <!--            Insurer Details-->
             <com.github.florent37.expansionpanel.ExpansionHeader
                 android:layout_height="wrap_content"
@@ -180,13 +184,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
                     android:layout_width="wrap_content"
+                    android:layout_margin="10dp"
                     app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/insurer_details"
-                    android:textSize="20sp"
+                    android:textSize="25sp"
                     android:gravity="center"
                     android:layout_gravity="center_horizontal"/>
 
@@ -447,7 +452,8 @@
                 android:layout_width="match_parent"
                 app:expansion_headerIndicator="@+id/headerIndicator3"
                 app:expansion_layout="@+id/expansionLayout3"
-                app:expansion_toggleOnClick="true">
+                app:expansion_toggleOnClick="true"
+                android:padding="10dp">
 
                 <ImageView
                     android:adjustViewBounds="true"
@@ -462,7 +468,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/thirdparty_details"
-                    android:textSize="20sp"
+                    android:textSize="25sp"
                     android:gravity="center"
                     android:layout_gravity="center_horizontal"/>
 
@@ -720,7 +726,7 @@
             </com.github.florent37.expansionpanel.ExpansionLayout>
 
 
-            <include layout="@layout/activity_card_view_card_design"/>
+<!--            <include layout="@layout/activity_card_view_card_design"/>-->
 
 
         </LinearLayout>
