@@ -1,10 +1,13 @@
 package com.example.sidemenu;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -36,6 +39,8 @@ public class CaseDetailsAdapter extends RecyclerView.Adapter<CaseDetailsAdapter.
         holder.tv_due_date.setText(pageOfItem.getDueDate());
         holder.tv_status.setText(pageOfItem.getStatusName());
 
+
+
     }
 
     @Override
@@ -52,6 +57,15 @@ public class CaseDetailsAdapter extends RecyclerView.Adapter<CaseDetailsAdapter.
             tv_name = (TextView) itemView.findViewById(R.id.tv_name);
             tv_due_date = (TextView) itemView.findViewById(R.id.tv_due_date);
             tv_status = (TextView) itemView.findViewById(R.id.tv_status);
+
+            itemView.findViewById(R.id.btn_edit2).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context.getApplicationContext(), "Clciked",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(v.getContext(),Dashboard.class);
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 }

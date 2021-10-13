@@ -47,12 +47,12 @@
                     android:layout_height="wrap_content">
 
                     <ImageButton
+                        android:id="@+id/btn_edit2"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_alignParentRight="true"
-                        android:src="@drawable/ic_pencil"
                         android:backgroundTint="#B3E5FC"
-                        android:id="@+id/btn_edit"/>
+                        android:src="@drawable/ic_pencil" />
                 </RelativeLayout>
 
             </LinearLayout>

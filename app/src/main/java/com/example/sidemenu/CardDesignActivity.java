@@ -6,9 +6,11 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -25,12 +27,14 @@ public class CardDesignActivity extends AppCompatActivity {
     ImageView btMenu;
     RecyclerView recyclerView;
 
+
     CaseDetailsReqInterface caseDetailsReqInterface;
     ArrayList<CasedetailsModel> casedetailsModels = new ArrayList<>();
     ArrayList<CasebyLoggedModel> casebyLoggedModels = new ArrayList<>();
     ArrayList<PageOfItem> pageOfItems = new ArrayList<>();
     private CaseDetailsAdapter caseDetailsAdapter;
     private RecyclerView caserecyclerView;
+
 
 
     @Override
@@ -42,6 +46,7 @@ public class CardDesignActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
         btMenu = findViewById(R.id.bt_menu);
         recyclerView = findViewById(R.id.recycler_view);
+
 
         caserecyclerView = (RecyclerView) findViewById(R.id.case_recyclerview);
         caserecyclerView.setLayoutManager(new LinearLayoutManager(this));
