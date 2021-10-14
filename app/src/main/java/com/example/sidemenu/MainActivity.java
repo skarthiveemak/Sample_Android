@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sidemenu.EditPage.EditpageActivity;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,10 +24,10 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     ImageView btMenu;
     RecyclerView recyclerView;
-    static ArrayList<String> arrayList = new ArrayList<>();
+    public static ArrayList<String> arrayList = new ArrayList<>();
     MainAdapter adapter;
     EditText caseid;
-    ImageButton editbtn;
+    ImageButton editbtn,viewbtn;
 
 
     public static void closeDrawer(DrawerLayout drawerLayout) {
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycler_view);
         caseid = findViewById(R.id.et_caseid);
         editbtn = findViewById(R.id.btn_edit);
+        viewbtn = findViewById(R.id.btn_view);
 
         // Clear array list
         arrayList.clear();
@@ -59,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add("About");
         arrayList.add("Card Design Test");
         arrayList.add("Logout");
+        arrayList.add("Edit Page");
 
 
 
@@ -83,6 +87,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, expansionLayout.class);
+                startActivity(intent);
+            }
+        });
+
+        viewbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, EditpageActivity.class);
                 startActivity(intent);
             }
         });

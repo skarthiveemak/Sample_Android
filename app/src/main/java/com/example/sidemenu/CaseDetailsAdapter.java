@@ -39,8 +39,6 @@ public class CaseDetailsAdapter extends RecyclerView.Adapter<CaseDetailsAdapter.
         holder.tv_due_date.setText(pageOfItem.getDueDate());
         holder.tv_status.setText(pageOfItem.getStatusName());
 
-
-
     }
 
     @Override

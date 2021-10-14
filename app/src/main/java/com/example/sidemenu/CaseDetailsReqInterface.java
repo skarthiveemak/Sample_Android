@@ -1,5 +1,7 @@
 package com.example.sidemenu;
 
+import com.example.sidemenu.EditPage.GetByIdModel;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,5 +15,7 @@ public interface CaseDetailsReqInterface {
     @GET("casedetails/usercase/1/50/3")
     Call<CasebyLoggedModel> getloggeduser();
 
+    @GET("casedetails/case/3")
+    Call<List<GetByIdModel>> getcasebyid();
 
 }

@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.sidemenu.EditPage.EditpageActivity;
+
 import java.util.ArrayList;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
@@ -101,6 +103,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                         // show dialog
                         builder.show();
                         break;
+                    case 5:
+                        activity.startActivity(new Intent(activity, EditpageActivity.class)
+                                .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                        break;
+
                 }
             }
         });

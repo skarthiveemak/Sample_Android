@@ -36,7 +36,7 @@ public class PageOfItem {
     private String AppUserID;
 
     // Assignment ID
-    private Integer getAssignmentID() {
+    public Integer getAssignmentID() {
         return AssignmentID;
     }
     public void setAssignmentID(Integer AssignmentID) {
