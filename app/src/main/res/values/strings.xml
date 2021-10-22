@@ -24,6 +24,9 @@
     <string name="insurer_details">Insurer Details</string>
     <string name="my_computer">My Computer</string>
     <string name="agent_name">Agent Name</string>
+    <string name="id">ID</string>
+    <string name="search">Search</string>
+    <string name="update">Update</string>
     <string-array name="spinner_agent_name">
         <item>Mercury</item>
         <item>Venus</item>

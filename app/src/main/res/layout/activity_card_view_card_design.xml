@@ -41,6 +41,14 @@
                     android:textAlignment="textEnd"
                     android:inputType="textPersonName"
                     android:backgroundTint="@color/white"/>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_ID"
+                    android:textAlignment="textEnd"
+                    android:inputType="number"
+                    android:visibility="gone"
+                    android:backgroundTint="@color/white"/>
 
                 <RelativeLayout
                     android:layout_width="match_parent"

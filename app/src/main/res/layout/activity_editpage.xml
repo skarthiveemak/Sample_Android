@@ -14,24 +14,63 @@
 
         <include layout="@layout/main_toolbar" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
-            <androidx.core.widget.NestedScrollView
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nes_scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/editpage_recyclerview"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content">
 
                 </androidx.recyclerview.widget.RecyclerView>
-            </androidx.core.widget.NestedScrollView>
 
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/iruka_btn"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/update"
+                    app:icon="@drawable/ic_baseline_update_24" />
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+        <RelativeLayout
+            android:id="@+id/loading_layout_edit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal"
+            android:visibility="visible">
+
+            <ProgressBar
+                android:id="@+id/progress_bar_edit"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:visibility="visible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/progress_bar_edit"
+                android:text="Loading..."
+                android:textColor="#26A69A"
+                android:textSize="25sp"
+                android:textStyle="bold" />
         </RelativeLayout>
+
+
     </LinearLayout>
 
 

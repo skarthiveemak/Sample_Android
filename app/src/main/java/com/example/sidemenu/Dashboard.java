@@ -18,6 +18,7 @@ import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -107,6 +108,10 @@ public class Dashboard extends AppCompatActivity {
                 drawerLayout.openDrawer(GravityCompat.START);
             }
         });
+
+        String mydata = getIntent().getStringExtra("data");
+        Toast.makeText(this,mydata,Toast.LENGTH_LONG).show();
+
 
     }
 

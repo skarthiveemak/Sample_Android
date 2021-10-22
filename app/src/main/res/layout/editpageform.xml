@@ -45,7 +45,28 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <!--     ID-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_ID"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@+id/et_e_ID"
+                    android:paddingHorizontal="13dp"
+                    app:endIconMode="clear_text"
+                    app:helperText="Mandatory*"
+                    app:helperTextTextColor="@color/teal_700"
+                    android:visibility="gone"
+                    app:startIconDrawable="@drawable/ic_name">
 
+                    <EditText
+                        android:id="@+id/et_e_ID"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/id"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName" />
+                </com.google.android.material.textfield.TextInputLayout>
                 <!--        Case ID-->
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_case_id"
@@ -723,6 +744,18 @@
             </LinearLayout>
 
         </com.github.florent37.expansionpanel.ExpansionLayout>
+
+<!--        <Button-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:drawableLeft="@drawable/ic_eye"-->
+<!--            android:backgroundTint="@color/white"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:id="@+id/btn_update"-->
+<!--            android:text="Update"-->
+<!--            />-->
+
 
 
     </LinearLayout>

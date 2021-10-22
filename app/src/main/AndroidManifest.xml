@@ -13,11 +13,15 @@
         android:theme="@style/Theme.Sidemenu"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".StaticEditPage.StaticEditActivity"
+            android:exported="false" />
+        <activity
             android:name=".EditPage.EditpageActivity"
             android:exported="false" />
         <activity
             android:name=".CardDesignActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar.Bridge" />
         <activity
             android:name=".expansionLayout"
             android:exported="true" />
